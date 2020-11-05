@@ -1,0 +1,80 @@
+{
+  "name": "root",
+  "description": "Foundational utilities for HTTP, REST & HATEOAS",
+  "private": true,
+  "author": "Naresh Bhatia",
+  "license": "MIT",
+  "homepage": "https://github.com/nareshbhatia/http-utils",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nareshbhatia/http-utils.git"
+  },
+  "keywords": [
+    "hateoas",
+    "http",
+    "javascript",
+    "rest",
+    "typescript"
+  ],
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "lerna run build",
+    "cz-commit": "git-cz",
+    "del-dist": "lerna run --parallel del-dist",
+    "format": "lerna run format",
+    "lerna": "lerna",
+    "lint": "lerna run --parallel lint",
+    "prepublish": "lerna run prepublish",
+    "start": "lerna run start --stream --parallel",
+    "test": "lerna run test --"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@react-force/eslint-config": "^1.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "babel-eslint": "^10.1.0",
+    "classnames": "^2.2.6",
+    "commitizen": "^4.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-react-app": "^6.0.0-next.77",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-testing-library": "^3.10.0",
+    "husky": "^4.3.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "lerna": "^3.22.1",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "tsdx": "^0.14.1",
+    "typescript": "^4.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "subject-case": [
+        0
+      ]
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
+}
