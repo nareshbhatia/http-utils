@@ -1,0 +1,36 @@
+{
+  "name": "@http-utils/hateoas",
+  "description": "Simple framework for HATEOAS",
+  "version": "1.0.0",
+  "author": "Naresh Bhatia",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nareshbhatia/http-utils.git",
+    "directory": "packages/hateoas"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.js",
+  "module": "dist/models.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsdx build --tsconfig tsconfig.build.json",
+    "build:local": "yarn lint && yarn test:coverage && yarn build",
+    "del-dist": "rimraf dist",
+    "format": "prettier --write '{src,test,stories}/**/*.ts*'",
+    "lint": "eslint '{src,test,stories}/**/*.ts*'",
+    "prepublish": "yarn build",
+    "start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean",
+    "test": "tsdx test",
+    "test:watch": "tsdx test --watch",
+    "test:coverage": "tsdx test --coverage --no-cache"
+  },
+  "dependencies": {
+    "tslib": "^2.0.3"
+  }
+}

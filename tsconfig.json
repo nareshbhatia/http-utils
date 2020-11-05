@@ -8,6 +8,7 @@
     "typeRoots": ["./node_modules/@types", "./types"],
     "paths": {
       "@http-utils/core": ["packages/core/src"],
+      "@http-utils/hateoas": ["packages/hateoas/src"],
       "$test/*": ["test/*"]
     }
   }
