@@ -30,7 +30,7 @@
     "test:watch": "tsdx test --watch",
     "test:coverage": "tsdx test --coverage --no-cache"
   },
-  "dependencies": {
+  "devDependencies": {
     "tslib": "^2.0.3"
   }
 }
