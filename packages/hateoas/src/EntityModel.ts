@@ -34,10 +34,7 @@ function deserialize<T>(json: any): EntityModel<T> {
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 export const EntityModel = {
-    addLink: RepresentationModel.addLink,
-    addLinks: RepresentationModel.addLinks,
-    getLink: RepresentationModel.getLink,
-    hasLink: RepresentationModel.hasLink,
+    ...RepresentationModel,
     create,
     getEntity,
     serialize,
