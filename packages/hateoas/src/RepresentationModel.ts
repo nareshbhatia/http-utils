@@ -1,27 +1,24 @@
 import { Link, LinkMap } from './Link';
 
 /** A container for a collection of Links */
-export interface RepresentationModel {
-    _links: LinkMap;
-}
+export class RepresentationModel {
+    links: LinkMap = {};
 
-/* eslint-disable @typescript-eslint/no-redeclare */
-export const RepresentationModel = {
-    addLink: (model: RepresentationModel, relation: string, href: string) => {
-        model._links[relation] = { href };
-    },
+    addLink(relation: string, href: string): void {
+        this.links[relation] = { href };
+    }
 
-    addLinks: (model: RepresentationModel, linkMap: LinkMap) => {
+    addLinks(linkMap: LinkMap) {
         for (const [relation, link] of Object.entries(linkMap)) {
-            model._links[relation] = link;
+            this.links[relation] = link;
         }
-    },
+    }
 
-    getLink(model: RepresentationModel, relation: string): Link | undefined {
-        return model._links[relation];
-    },
+    getLink(relation: string): Link | undefined {
+        return this.links[relation];
+    }
 
-    hasLink(model: RepresentationModel, relation: string): boolean {
-        return model._links[relation] !== undefined;
-    },
-};
+    hasLink(relation: string): boolean {
+        return this.links[relation] !== undefined;
+    }
+}
